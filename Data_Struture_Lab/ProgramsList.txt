@@ -1,0 +1,39 @@
+=======================================================================================                        
+                          Programs List For Data Structure 
+=======================================================================================
+
+[Done] 1. Insert a new element at any specified position in a given linear array.   
+
+[Done] 2. Delete any element from any specified position in a given linear array.
+
+*[Done] 3. Implement a linked list 
+
+*[Done] 4. Implement inversion of a linked list
+
+[Done] 5. Implement stack using array 
+
+*[Done]6. Implement queue using array. 
+
+7. Implement circular queue using array 
+
+8. Implement stack using linked list. 
+
+9. Implement queue using linked list. 
+
+10. Implement circular queue using linked list
+
+[Done] 11. Implement linear and binary search
+
+[] 12. Implement sorting algorithms like bubble sort, selection sort, insertion sort, quick sort and merge sort
+
+13. Implement binary search tree using linked list. 
+
+14. To implement tree traversals using linked list. 
+
+15. To implement BFS ad DFS using linked list
+
+==========================================================================================
+                                    Extra Programs
+==========================================================================================
+
+16. 

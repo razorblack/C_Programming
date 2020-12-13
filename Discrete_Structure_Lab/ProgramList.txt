@@ -1,0 +1,17 @@
+1. Write a program in c to create two sets and perform the union operation on sets.
+
+2. Write a program in c to create two sets and perform the intersection operation on sets.
+
+3. Write a program in c to create two sets and perform the difference operation on sets.
+
+4. Write a program in c to find the symmetric difference operation.
+
+5. Write a program in c to perform the power set operation on a set.
+
+6. Write a program in c to find the Boolean Truth Table for AND, OR and NOT.
+
+7. Write a program in c to find the cartesian product of two sets.
+
+8. Write a program in c for minimum cost spanning tree.
+
+9. Write a program in c for finding shortest path in a graph.
