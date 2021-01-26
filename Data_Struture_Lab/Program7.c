@@ -5,11 +5,12 @@
 
 #define MAX 10  //Circular Queue Size
 
-int queue[MAX],FRONT, REAR;
+int queue[MAX];
+int FRONT = -1, REAR = -1;
 
 //Method to check if circular queue is empty
 int isEmpty() {
-    if (FRONT == -1 || FRONT > REAR) {
+    if (FRONT == -1) {
         return 1;
     } else {
         return 0;
@@ -18,7 +19,7 @@ int isEmpty() {
 
 //Method to check if circular queue is full
 int isFull() {
-    if (REAR == MAX-1) {
+    if ((FRONT == REAR + 1) || (FRONT == 0 && REAR == MAX - 1)) {
         return 1;
     } else {
         return 0;
@@ -27,7 +28,7 @@ int isFull() {
 
 //Method to print the element at front
 void peek() {
-    if(isEmpty()== 1) {
+    if(isEmpty() == 1) {
         printf("Queue is empty \n");
     } else {
         printf("Element at front is: %d \n",queue[FRONT]);
@@ -39,11 +40,12 @@ void enqueue(int item) {
     if (isFull() == 1) {
         printf("Queue is Full: Element can't be inserted \n");
     } else {
-        REAR++;
-        queue[REAR] = item;
         if (FRONT == -1) {
-            FRONT++;
+            FRONT = 0;
         }
+        REAR = (REAR + 1) % MAX;
+        queue[REAR] = item;
+        printf("Element Inserted \n");
     }
 }
 
@@ -53,26 +55,31 @@ void dequeue() {
         printf("Queue is Empty: Element can't be removed \n");
     } else {
         printf("Element removed is: %d \n",queue[FRONT]);
-        FRONT++;
+        if (FRONT == REAR) {
+            FRONT = -1;
+            REAR = -1;
+        } else {
+            FRONT = (FRONT + 1) % MAX;
+        }
     }
 }
 
 //Method to display the elements of circular queue
 void display() {
+    int i;
     if (isEmpty() == 1) {
         printf("Queue is Empty \n");
     } else {
         printf("Elements of Queue are: \n");
-        for (int i = FRONT; i <= REAR; i++) {
+        for (i = FRONT; i != REAR; i = (i +1) % MAX) {
             printf("%d ",queue[i]);
         }
+        printf("%d ",queue[i]);
         printf("\n");
     }
 }
 
 void main() {
-    FRONT = -1;
-    REAR = -1;
     int choice=0;
     int item;
     while(1) {
@@ -100,6 +107,4 @@ void main() {
                 break;
         }
     }
-
-
 }

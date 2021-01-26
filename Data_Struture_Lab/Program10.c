@@ -7,71 +7,85 @@ struct Node
     struct Node* next;        
 };
 
-struct Node *rear = NULL;
 struct Node *front = NULL;
+struct Node *rear = NULL;
 
-void dequeue() 
-{
-    if (front == NULL)
-    {
-        printf("Queue Underflow\n");
-        return;
-    }
- 
-    struct Node *temp = front;
-    printf("Element at front is %d\n", temp->data);
- 
-    front = front->next;
-    if(front == NULL)
-        rear = NULL;
-
-    free(temp);
-    printf("\n");
+int isEmpty() {
+  if (front == NULL){
+      return 1;
+  } else {
+      return 0;
+  }
 }
- 
-void enqueue(int item) // insertion at the end
-{
-    
-    struct Node* node = (struct Node*)malloc(sizeof(struct Node));
-    node->data = item;
-    node->next = NULL;
 
-    printf("Inserting %d\n", item);
-    
-    //when queue is empty
-    if (front == NULL && rear == NULL)
-    {
-        front = node;
-        rear = node;
-    }
-    else
-    {
-        rear->next = node;
-        rear = node;
-    }
-    printf("\n");
-}
- 
 void peek()
 {
-    if (front != NULL)
-        printf("Element at front is %d:",front->data);
-    else
+    if (front != NULL) {
+        printf("Element at front is %d:\n",front->data);
+    } else {
         printf("Queue is empty \n");
-    
-    printf("\n");
+    }
+}
+
+void enqueue(int item) // insertion in circular queue
+{
+    struct Node* node = (struct Node*)malloc(sizeof(struct Node));
+    node->data = item;
+
+    printf("Inserting %d\n", item);
+    //when queue is empty
+    if (isEmpty() == 1)
+    {
+        front = node;
+    } else {
+        rear->next = node;
+    }
+
+    rear = node;
+    rear->next = front;
+    printf("Element Inserted\n");
+}
+ 
+void dequeue() // deletion from circular queue
+{
+    int item;
+    if (isEmpty() == 1)
+    {
+        printf("Queue is empty\n");
+        return;
+    } else {
+        if (front == rear) {
+            item = front->data;
+            printf("Element removed: %d \n",item);
+            free(front);
+            front = NULL;
+            rear = NULL;
+        } else {
+            struct Node *q;
+            q = front;
+            item = q->data;
+
+            front = front->next;
+            rear->next = front;
+
+            free(q);
+            printf("Element removed: %d \n",item);
+        }
+    }
 }
 
 void display() {
-    
-    struct Node *temp = front;
-    while(temp)
-    {
-        printf("%d ",temp->data);
-        temp = temp->next;
+    if (isEmpty() == 1) {
+        printf("Queue is empty\n");
+    } else {
+        struct Node *temp = front;
+        do
+        {
+            printf("%d ",temp->data);
+            temp = temp->next;
+        } while(temp != front);
+        printf("\n");
     }
-    printf("\n");
-
 }
  
 void main() {

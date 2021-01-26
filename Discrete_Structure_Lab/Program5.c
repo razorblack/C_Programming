@@ -34,7 +34,11 @@ void main() {
     }
 
     printf("Power Set of the entered set is: \n");
+    printf("{ ");
     for(int i = 0; i < sizeOfPowerset; i++) {
-        printf("%d \t",powerset[i]);
+        printf("{");
+        printf("%d",powerset[i]);
+        printf("} ");
     }
+    printf(" }");
 }

@@ -44,5 +44,6 @@ void main() {
     for (i = 0; i < m; i++) {
         scanf("%d", &set[i]);
     }
-    complement(universal,set,n,m);
+    // Method calling for finding complement of a set
+    complement(universal, set, n, m);
 }

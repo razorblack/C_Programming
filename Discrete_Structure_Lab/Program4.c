@@ -1,6 +1,16 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+int present(int arr[], int length, int item) {
+    for (int i = 0; i < length; i++) {
+        if (arr[i] == item) {
+            return 1;
+        }
+        
+    }
+    return 0;
+}
+
 int difference(int setA[], int setB[], int n, int m, int differ[]) {
     int index=0;
     int present = 0;
@@ -43,15 +53,7 @@ void unionOfSet(int set1[], int set2[], int n, int m) {
     }
 
 }
-int present(int arr[], int length, int item) {
-    for (int i = 0; i < length; i++) {
-        if (arr[i] == item) {
-            return 1;
-        }
-        
-    }
-    return 0;
-}
+
 
 int commonElements(int setA[], int setB[], int n, int m) {
     int count = 0;

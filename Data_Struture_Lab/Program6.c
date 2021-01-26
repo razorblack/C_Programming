@@ -54,10 +54,6 @@ void dequeue() {
     } else {
         printf("Element removed is: %d \n",queue[FRONT]);
         FRONT++;
-        // REAR--;
-        // for (int i = FRONT + 1; i <= REAR; i++) {
-        //    queue[i -1] = queue[i];
-        // }
     }
 }
 
