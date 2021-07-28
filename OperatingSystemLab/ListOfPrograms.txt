@@ -1,0 +1,46 @@
+                                 Program List
+---------------------------------------------------------------------------------------
+
+
+1. List the hardware and software requirements of different operating systems 
+   (UNIX, LINUX, WINDOWS XP/7/8)
+
+2. Write a program in C language to execute fork system of
+   process management.
+
+3 (i). Write a program in C language to execute File management system call
+
+3 (ii). Write a C program to simulate the following Non-
+        Preemptive- FCFS CPU scheduling algorithms to
+        find turnaround time and waiting time.
+
+4. Write a C program to simulate the following
+   Non-Preemptive SJF CPU scheduling algorithms
+   to find turnaround time and waiting time.
+
+5. Write a C program to simulate the following Non-
+   Preemptive- Priority and Round Robin CPU scheduling
+   algorithms to find turnaround time and waiting
+   time.
+
+6. Write a C program to simulate Banker's
+   Algorithm; calculate need matrix and safe
+   sequence.
+
+7. Write a C program to simulate the following file
+   allocation strategies: 
+   a) Sequential 
+   b) Indexed 
+   c) Linked
+
+8. Write a C program to simulate the following
+   contiguous memory allocation techniques:
+   a) Worst-fit 
+   b) Best-fit 
+   c) First-fit
+
+9. Write a C program to simulate Producer-Consumer
+   problem using semaphores 
+
+10. Implement the solutions for Readers-Writers problem
+    using inter process communication technique :- Semaphore
